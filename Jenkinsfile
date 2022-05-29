@@ -12,18 +12,18 @@ pipeline {
         }
 
       }
-      stage('triggered by SCMTrigger') {
-        when {
-          triggeredBy 'SCMTrigger'
+      // stage('triggered by SCMTrigger') {
+      //   when {
+      //     triggeredBy 'SCMTrigger'
 
 
-          }
-          steps {
-              script {
-                  echo 'triggered by SCMTrigger'
-              }
-          }
-      }
+      //     }
+      //     steps {
+      //         script {
+      //             echo 'triggered by SCMTrigger'
+      //         }
+      //     }
+      // }
       stage('Setup build environment'){
         steps {
           script {
