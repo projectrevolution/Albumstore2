@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { ProductService } from './product.service';
@@ -5,12 +6,14 @@ import { ProductService } from './product.service';
 describe('ProductService', () => {
   let service: ProductService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ProductService);
+  beforeEach(async () => {
+   await TestBed.configureTestingModule({
+     imports: [HttpClientModule]
+   });
+    service = TestBed.inject(ProductService)
   });
 
-  it('should be created', () => {
+  it('should be created', async () => {
     expect(service).toBeTruthy();
   });
 });

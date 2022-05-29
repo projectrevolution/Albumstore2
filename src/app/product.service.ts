@@ -10,8 +10,8 @@ import { Album } from 'src/app/album';
 })
 export class ProductService {
 
-  private _albumUrl = '../assets/album.json';
-  private _productUrl = '../assets/products.json';
+  private _albumUrl = '/assets/album.json'
+  private _productUrl = '/assets/products.json';
 
   constructor(private _http: HttpClient) { }
 
@@ -21,6 +21,6 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this._http.get(this._productUrl).pipe(map((response) => response as any));
+    return this._http.get(this._productUrl).pipe(map((response) => response as Product[]));
   }
 }

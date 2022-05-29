@@ -1,9 +1,11 @@
-import { Track } from "./tracks";
+import { Track } from './tracks';
 
 export interface Album {
-  name: string;
-  releaseDate: string;
-  coverImage: string;
-  tracks: Track[];
+  artist: string;
+  album: {
+    name: string;
+    releaseDate: string;
+    coverImage: string;
+    tracks: Track[];
+  };
 }
-

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -13,20 +13,19 @@ import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   {
     path: 'products',
-    component: ProductListComponent
+    component: ProductListComponent,
   },
   {
     path: 'product/:id',
-    component: ProductPageComponent
+    component: ProductPageComponent,
   },
 
   {
     path: '',
     redirectTo: 'products',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
-
 
 @NgModule({
   declarations: [
@@ -34,15 +33,17 @@ const appRoutes: Routes = [
     ProductListComponent,
     ProductDescriptionComponent,
     ProductPageComponent,
-    ProductTracklistingComponent
+    ProductTracklistingComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
