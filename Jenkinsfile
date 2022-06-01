@@ -2,6 +2,9 @@ def packageJson
 
 pipeline {
     agent any
+    tools {
+        nodejs '16.15.0'
+    }
 
 
     stages {
